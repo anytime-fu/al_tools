@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    
+    <!-- Toolbox body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M30,42 L78,42 Q82,42 82,46 L82,78 Q82,82 78,82 L30,82 Q26,82 26,78 L26,46 Q26,42 30,42 Z" />
+    
+    <!-- Toolbox handle -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="4"
+        android:pathData="M42,42 L42,34 Q42,26 50,26 L58,26 Q66,26 66,34 L66,42" />
+    
+    <!-- AI Brain circle -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M54,54 m-14,0 a14,14 0,1 1,28 0 a14,14 0,1 1,-28 0" />
+    
+    <!-- Brain center -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,54 m-5,0 a5,5 0,1 1,10 0 a5,5 0,1 1,-10 0" />
+    
+    <!-- Neural connections left -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="2"
+        android:pathData="M40,50 L48,54" />
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M38,50 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    
+    <!-- Neural connections right -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="2"
+        android:pathData="M60,54 L68,50" />
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M70,50 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    
+    <!-- Neural connections top -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="2"
+        android:pathData="M54,40 L54,48" />
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M54,38 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    
+    <!-- Neural connections bottom -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="2"
+        android:pathData="M54,60 L54,68" />
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M54,70 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    
+    <!-- Toolbox divider -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="2"
+        android:pathData="M34,62 L74,62" />
+    
+    <!-- Toolbox latch -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M50,78 L58,78 Q60,78 60,80 L60,84 Q60,86 58,86 L50,86 Q48,86 48,84 L48,80 Q48,78 50,78 Z" />
+</vector>

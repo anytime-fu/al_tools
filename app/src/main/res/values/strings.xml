@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">AI工具箱</string>
+    <string name="home">首页</string>
+    <string name="note">笔记</string>
+    <string name="document">文档</string>
+    <string name="ai_tools">AI工具</string>
+    <string name="calculator">计算</string>
+    <string name="personal">个人</string>
+    <string name="settings">设置</string>
+    <string name="search">搜索</string>
+    <string name="save">保存</string>
+    <string name="cancel">取消</string>
+    <string name="delete">删除</string>
+    <string name="edit">编辑</string>
+    <string name="confirm">确认</string>
+    <string name="loading">加载中...</string>
+    <string name="error_network">网络错误，请重试</string>
+    <string name="error_api_key">请先配置API Key</string>
+    <string name="no_data">暂无数据</string>
+</resources>

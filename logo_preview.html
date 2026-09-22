@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI工具箱 Logo 预览</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        h1 {
+            color: #2196F3;
+            text-align: center;
+        }
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        .logo-card {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .logo-card h3 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+        .logo-container {
+            background: #f0f0f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 15px;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .logo-container.dark {
+            background: #1a1a1a;
+        }
+        .logo-description {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .export-btn {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+        .export-btn:hover {
+            background: #1976D2;
+        }
+        .sizes {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .size-btn {
+            background: #e0e0e0;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+        .size-btn.active {
+            background: #03DAC5;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI工具箱 Logo 预览</h1>
+    
+    <div class="logo-grid">
+        <!-- 启动器图标 -->
+        <div class="logo-card">
+            <h3>启动器图标</h3>
+            <div class="logo-container">
+                <svg viewBox="0 0 108 108" width="150" height="150">
+                    <defs>
+                        <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="54" cy="54" r="50" fill="url(#grad1)"/>
+                    <path d="M30,42 L78,42 Q82,42 82,46 L82,78 Q82,82 78,82 L30,82 Q26,82 26,78 L26,46 Q26,42 30,42 Z" fill="white" opacity="0.95"/>
+                    <path d="M42,42 L42,34 Q42,26 50,26 L58,26 Q66,26 66,34 L66,42" fill="none" stroke="white" stroke-width="4" opacity="0.95"/>
+                    <circle cx="54" cy="54" r="14" fill="#03DAC5"/>
+                    <circle cx="54" cy="54" r="5" fill="white"/>
+                    <circle cx="40" cy="50" r="3" fill="#03DAC5"/>
+                    <circle cx="68" cy="50" r="3" fill="#03DAC5"/>
+                    <circle cx="54" cy="38" r="3" fill="#03DAC5"/>
+                    <line x1="43" y1="50" x2="48" y2="52" stroke="#03DAC5" stroke-width="2"/>
+                    <line x1="60" y1="52" x2="65" y2="50" stroke="#03DAC5" stroke-width="2"/>
+                    <line x1="54" y1="41" x2="54" y2="47" stroke="#03DAC5" stroke-width="2"/>
+                    <rect x="50" y="78" width="8" height="6" rx="1" fill="#03DAC5"/>
+                </svg>
+            </div>
+            <div class="logo-description">
+                Android自适应图标，适用于Android 8.0+设备
+            </div>
+            <button class="export-btn" onclick="exportSVG('launcher')">导出SVG</button>
+        </div>
+        
+        <!-- 完整Logo -->
+        <div class="logo-card">
+            <h3>完整Logo</h3>
+            <div class="logo-container">
+                <svg viewBox="0 0 200 200" width="180" height="180">
+                    <defs>
+                        <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    <circle cx="100" cy="100" r="90" fill="url(#grad2)"/>
+                    <path d="M50,75 L150,75 Q155,75 155,80 L155,145 Q155,150 150,150 L50,150 Q45,150 45,145 L45,80 Q45,75 50,75 Z" fill="white" opacity="0.95"/>
+                    <path d="M75,75 L75,60 Q75,45 90,45 L110,45 Q125,45 125,60 L125,75" fill="none" stroke="white" stroke-width="8" opacity="0.95"/>
+                    <circle cx="100" cy="105" r="25" fill="#03DAC5"/>
+                    <circle cx="100" cy="105" r="10" fill="white"/>
+                    <circle cx="65" cy="95" r="6" fill="#03DAC5"/>
+                    <circle cx="135" cy="95" r="6" fill="#03DAC5"/>
+                    <circle cx="100" cy="60" r="6" fill="#03DAC5"/>
+                    <line x1="71" y1="95" x2="87" y2="100" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="113" y1="100" x2="129" y2="95" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="100" y1="66" x2="100" y2="87" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="55" y1="120" x2="145" y2="120" stroke="#E0E0E0" stroke-width="3"/>
+                    <rect x="88" y="145" width="24" height="13" rx="3" fill="#03DAC5"/>
+                </svg>
+            </div>
+            <div class="logo-description">
+                完整logo，适用于关于页面、启动画面等
+            </div>
+            <button class="export-btn" onclick="exportSVG('full')">导出SVG</button>
+        </div>
+        
+        <!-- 带文字Logo -->
+        <div class="logo-card">
+            <h3>带文字Logo</h3>
+            <div class="logo-container">
+                <svg viewBox="0 0 400 120" width="350" height="105">
+                    <defs>
+                        <linearGradient id="grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+                    
+                    <!-- Icon -->
+                    <g transform="translate(10, 10) scale(0.15)">
+                        <circle cx="256" cy="256" r="240" fill="url(#grad3)"/>
+                        <path d="M128,200 L384,200 Q392,200 392,208 L392,380 Q392,388 384,388 L128,388 Q120,388 120,380 L120,208 Q120,200 128,200 Z" fill="white" opacity="0.95"/>
+                        <path d="M192,200 L192,160 Q192,128 224,128 L288,128 Q320,128 320,160 L320,200" fill="none" stroke="white" stroke-width="24" opacity="0.95"/>
+                        <circle cx="256" cy="270" r="30" fill="#03DAC5"/>
+                        <circle cx="256" cy="270" r="12" fill="white"/>
+                        <circle cx="176" cy="260" r="12" fill="#03DAC5"/>
+                        <circle cx="336" cy="260" r="12" fill="#03DAC5"/>
+                        <circle cx="256" cy="200" r="12" fill="#03DAC5"/>
+                        <line x1="188" y1="260" x2="234" y2="268" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="278" y1="268" x2="324" y2="260" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="256" y1="212" x2="256" y2="248" stroke="#03DAC5" stroke-width="4"/>
+                        <rect x="232" y="360" width="48" height="30" rx="6" fill="#03DAC5"/>
+                    </g>
+                    
+                    <!-- Text -->
+                    <g transform="translate(80, 25)">
+                        <text x="0" y="35" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2196F3">AI</text>
+                        <text x="70" y="35" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#333333">Toolbox</text>
+                        <text x="0" y="65" font-family="Arial, sans-serif" font-size="18" fill="#666666">智能工具箱</text>
+                    </g>
+                </svg>
+            </div>
+            <div class="logo-description">
+                带文字logo，适用于网站、文档等
+            </div>
+            <button class="export-btn" onclick="exportSVG('text')">导出SVG</button>
+        </div>
+        
+        <!-- 深色背景版本 -->
+        <div class="logo-card">
+            <h3>深色背景版本</h3>
+            <div class="logo-container dark">
+                <svg viewBox="0 0 200 200" width="180" height="180">
+                    <circle cx="100" cy="100" r="90" fill="#2196F3"/>
+                    <path d="M50,75 L150,75 Q155,75 155,80 L155,145 Q155,150 150,150 L50,150 Q45,150 45,145 L45,80 Q45,75 50,75 Z" fill="white" opacity="0.95"/>
+                    <path d="M75,75 L75,60 Q75,45 90,45 L110,45 Q125,45 125,60 L125,75" fill="none" stroke="white" stroke-width="8" opacity="0.95"/>
+                    <circle cx="100" cy="105" r="25" fill="#03DAC5"/>
+                    <circle cx="100" cy="105" r="10" fill="white"/>
+                    <circle cx="65" cy="95" r="6" fill="#03DAC5"/>
+                    <circle cx="135" cy="95" r="6" fill="#03DAC5"/>
+                    <circle cx="100" cy="60" r="6" fill="#03DAC5"/>
+                    <line x1="71" y1="95" x2="87" y2="100" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="113" y1="100" x2="129" y2="95" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="100" y1="66" x2="100" y2="87" stroke="#03DAC5" stroke-width="4"/>
+                    <line x1="55" y1="120" x2="145" y2="120" stroke="#E0E0E0" stroke-width="3"/>
+                    <rect x="88" y="145" width="24" height="13" rx="3" fill="#03DAC5"/>
+                </svg>
+            </div>
+            <div class="logo-description">
+                深色背景下的logo效果
+            </div>
+            <button class="export-btn" onclick="exportSVG('dark')">导出SVG</button>
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-top: 40px; padding: 20px; background: white; border-radius: 12px;">
+        <h2>使用说明</h2>
+        <p style="color: #666; max-width: 600px; margin: 0 auto; line-height: 1.6;">
+            点击"导出SVG"按钮可以下载对应的SVG文件。SVG是矢量格式，可以无损缩放到任意尺寸。<br>
+            如需PNG格式，可以使用在线转换工具或图像编辑软件打开SVG文件并导出为PNG。
+        </p>
+    </div>
+    
+    <script>
+        function exportSVG(type) {
+            let svgContent = '';
+            let filename = '';
+            
+            switch(type) {
+                case 'launcher':
+                    svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108 108" width="512" height="512">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="54" cy="54" r="50" fill="url(#grad)"/>
+                        <path d="M30,42 L78,42 Q82,42 82,46 L82,78 Q82,82 78,82 L30,82 Q26,82 26,78 L26,46 Q26,42 30,42 Z" fill="white" opacity="0.95"/>
+                        <path d="M42,42 L42,34 Q42,26 50,26 L58,26 Q66,26 66,34 L66,42" fill="none" stroke="white" stroke-width="4" opacity="0.95"/>
+                        <circle cx="54" cy="54" r="14" fill="#03DAC5"/>
+                        <circle cx="54" cy="54" r="5" fill="white"/>
+                        <circle cx="40" cy="50" r="3" fill="#03DAC5"/>
+                        <circle cx="68" cy="50" r="3" fill="#03DAC5"/>
+                        <circle cx="54" cy="38" r="3" fill="#03DAC5"/>
+                        <line x1="43" y1="50" x2="48" y2="52" stroke="#03DAC5" stroke-width="2"/>
+                        <line x1="60" y1="52" x2="65" y2="50" stroke="#03DAC5" stroke-width="2"/>
+                        <line x1="54" y1="41" x2="54" y2="47" stroke="#03DAC5" stroke-width="2"/>
+                        <rect x="50" y="78" width="8" height="6" rx="1" fill="#03DAC5"/>
+                    </svg>`;
+                    filename = 'ai-toolbox-launcher.svg';
+                    break;
+                case 'full':
+                    svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <circle cx="100" cy="100" r="90" fill="url(#grad)"/>
+                        <path d="M50,75 L150,75 Q155,75 155,80 L155,145 Q155,150 150,150 L50,150 Q45,150 45,145 L45,80 Q45,75 50,75 Z" fill="white" opacity="0.95"/>
+                        <path d="M75,75 L75,60 Q75,45 90,45 L110,45 Q125,45 125,60 L125,75" fill="none" stroke="white" stroke-width="8" opacity="0.95"/>
+                        <circle cx="100" cy="105" r="25" fill="#03DAC5"/>
+                        <circle cx="100" cy="105" r="10" fill="white"/>
+                        <circle cx="65" cy="95" r="6" fill="#03DAC5"/>
+                        <circle cx="135" cy="95" r="6" fill="#03DAC5"/>
+                        <circle cx="100" cy="60" r="6" fill="#03DAC5"/>
+                        <line x1="71" y1="95" x2="87" y2="100" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="113" y1="100" x2="129" y2="95" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="100" y1="66" x2="100" y2="87" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="55" y1="120" x2="145" y2="120" stroke="#E0E0E0" stroke-width="3"/>
+                        <rect x="88" y="145" width="24" height="13" rx="3" fill="#03DAC5"/>
+                    </svg>`;
+                    filename = 'ai-toolbox-full.svg';
+                    break;
+                case 'text':
+                    svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 120" width="800" height="240">
+                        <defs>
+                            <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#2196F3;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#03DAC5;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <g transform="translate(10, 10) scale(0.15)">
+                            <circle cx="256" cy="256" r="240" fill="url(#grad)"/>
+                            <path d="M128,200 L384,200 Q392,200 392,208 L392,380 Q392,388 384,388 L128,388 Q120,388 120,380 L120,208 Q120,200 128,200 Z" fill="white" opacity="0.95"/>
+                            <path d="M192,200 L192,160 Q192,128 224,128 L288,128 Q320,128 320,160 L320,200" fill="none" stroke="white" stroke-width="24" opacity="0.95"/>
+                            <circle cx="256" cy="270" r="30" fill="#03DAC5"/>
+                            <circle cx="256" cy="270" r="12" fill="white"/>
+                            <circle cx="176" cy="260" r="12" fill="#03DAC5"/>
+                            <circle cx="336" cy="260" r="12" fill="#03DAC5"/>
+                            <circle cx="256" cy="200" r="12" fill="#03DAC5"/>
+                            <line x1="188" y1="260" x2="234" y2="268" stroke="#03DAC5" stroke-width="4"/>
+                            <line x1="278" y1="268" x2="324" y2="260" stroke="#03DAC5" stroke-width="4"/>
+                            <line x1="256" y1="212" x2="256" y2="248" stroke="#03DAC5" stroke-width="4"/>
+                            <rect x="232" y="360" width="48" height="30" rx="6" fill="#03DAC5"/>
+                        </g>
+                        <g transform="translate(80, 25)">
+                            <text x="0" y="35" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#2196F3">AI</text>
+                            <text x="70" y="35" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#333333">Toolbox</text>
+                            <text x="0" y="65" font-family="Arial, sans-serif" font-size="18" fill="#666666">智能工具箱</text>
+                        </g>
+                    </svg>`;
+                    filename = 'ai-toolbox-text.svg';
+                    break;
+                case 'dark':
+                    svgContent = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="512" height="512">
+                        <rect width="200" height="200" fill="#1a1a1a"/>
+                        <circle cx="100" cy="100" r="90" fill="#2196F3"/>
+                        <path d="M50,75 L150,75 Q155,75 155,80 L155,145 Q155,150 150,150 L50,150 Q45,150 45,145 L45,80 Q45,75 50,75 Z" fill="white" opacity="0.95"/>
+                        <path d="M75,75 L75,60 Q75,45 90,45 L110,45 Q125,45 125,60 L125,75" fill="none" stroke="white" stroke-width="8" opacity="0.95"/>
+                        <circle cx="100" cy="105" r="25" fill="#03DAC5"/>
+                        <circle cx="100" cy="105" r="10" fill="white"/>
+                        <circle cx="65" cy="95" r="6" fill="#03DAC5"/>
+                        <circle cx="135" cy="95" r="6" fill="#03DAC5"/>
+                        <circle cx="100" cy="60" r="6" fill="#03DAC5"/>
+                        <line x1="71" y1="95" x2="87" y2="100" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="113" y1="100" x2="129" y2="95" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="100" y1="66" x2="100" y2="87" stroke="#03DAC5" stroke-width="4"/>
+                        <line x1="55" y1="120" x2="145" y2="120" stroke="#E0E0E0" stroke-width="3"/>
+                        <rect x="88" y="145" width="24" height="13" rx="3" fill="#03DAC5"/>
+                    </svg>`;
+                    filename = 'ai-toolbox-dark.svg';
+                    break;
+            }
+            
+            const blob = new Blob([svgContent], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="300dp"
+    android:height="100dp"
+    android:viewportWidth="300"
+    android:viewportHeight="100">
+    
+    <!-- Icon area -->
+    <group
+        android:translateX="10"
+        android:translateY="10"
+        android:scaleX="0.8"
+        android:scaleY="0.8">
+        
+        <!-- Toolbox body -->
+        <path
+            android:fillColor="#2196F3"
+            android:pathData="M5,20 L55,20 Q58,20 58,23 L58,65 Q58,68 55,68 L5,68 Q2,68 2,65 L2,23 Q2,20 5,20 Z" />
+        
+        <!-- Toolbox handle -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#2196F3"
+            android:strokeWidth="5"
+            android:pathData="M20,20 L20,14 Q20,8 26,8 L34,8 Q40,8 40,14 L40,20" />
+        
+        <!-- AI Brain -->
+        <path
+            android:fillColor="#03DAC5"
+            android:pathData="M30,38 m-10,0 a10,10 0,1 1,20 0 a10,10 0,1 1,-20 0" />
+        
+        <!-- Brain center -->
+        <path
+            android:fillColor="#FFFFFF"
+            android:pathData="M30,38 m-4,0 a4,4 0,1 1,8 0 a4,4 0,1 1,-8 0" />
+        
+        <!-- Neural nodes -->
+        <path
+            android:fillColor="#03DAC5"
+            android:pathData="M15,35 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+        <path
+            android:fillColor="#03DAC5"
+            android:pathData="M45,35 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+        <path
+            android:fillColor="#03DAC5"
+            android:pathData="M30,20 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+        
+        <!-- Connections -->
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#03DAC5"
+            android:strokeWidth="2"
+            android:pathData="M18,35 L24,37" />
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#03DAC5"
+            android:strokeWidth="2"
+            android:pathData="M36,37 L42,35" />
+        <path
+            android:fillColor="@android:color/transparent"
+            android:strokeColor="#03DAC5"
+            android:strokeWidth="2"
+            android:pathData="M30,23 L30,32" />
+        
+        <!-- Toolbox latch -->
+        <path
+            android:fillColor="#03DAC5"
+            android:pathData="M25,65 L35,65 Q37,65 37,67 L37,72 Q37,74 35,74 L25,74 Q23,74 23,72 L23,67 Q23,65 25,65 Z" />
+    </group>
+    
+    <!-- App name text -->
+    <group
+        android:translateX="75"
+        android:translateY="25">
+        
+        <!-- "AI" text -->
+        <path
+            android:fillColor="#2196F3"
+            android:pathData="M0,0 L8,0 L14,18 L16,18 L22,0 L30,0 L20,32 L12,32 Z M5,8 L17,8 L11,24 Z" />
+        
+        <path
+            android:fillColor="#2196F3"
+            android:pathData="M32,0 L40,0 L40,32 L32,32 Z" />
+        
+        <!-- "Toolbox" text -->
+        <path
+            android:fillColor="#333333"
+            android:pathData="M52,8 L72,8 L72,14 L60,14 L60,32 L52,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M74,8 L94,8 L94,14 L82,14 L82,32 L74,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M96,8 L116,8 L116,14 L104,14 L104,32 L96,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M118,8 L138,8 L138,14 L126,14 L126,32 L118,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M140,8 L160,8 L160,14 L148,14 L148,32 L140,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M162,8 L182,8 L182,14 L170,14 L170,32 L162,32 Z" />
+        
+        <path
+            android:fillColor="#333333"
+            android:pathData="M184,8 L204,8 L204,14 L192,14 L192,32 L184,32 Z" />
+    </group>
+</vector>

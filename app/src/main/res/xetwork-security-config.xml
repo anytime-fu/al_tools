@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<network-security-config>
+    <base-config cleartextTrafficPermitted="false">
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </base-config>
+    
+    <!-- 允许访问Gemini API -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">generativelanguage.googleapis.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+    
+    <!-- 允许访问汇率API -->
+    <domain-config cleartextTrafficPermitted="false">
+        <domain includeSubdomains="true">api.exchangerate-api.com</domain>
+        <trust-anchors>
+            <certificates src="system" />
+        </trust-anchors>
+    </domain-config>
+</network-security-config>

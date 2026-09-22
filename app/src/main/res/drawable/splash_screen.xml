@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background -->
+    <item>
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#2196F3"
+                android:endColor="#03DAC5"
+                android:angle="135" />
+        </shape>
+    </item>
+    
+    <!-- Center logo -->
+    <item
+        android:width="120dp"
+        android:height="120dp"
+        android:gravity="center"
+        android:drawable="@drawable/ic_logo_full" />
+</layer-list>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="200dp"
+    android:height="200dp"
+    android:viewportWidth="200"
+    android:viewportHeight="200">
+    
+    <!-- Background -->
+    <path
+        android:fillColor="#2196F3"
+        android:pathData="M100,100 m-90,0 a90,90 0,1 1,180 0 a90,90 0,1 1,-180 0" />
+    
+    <!-- Toolbox body -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M50,75 L150,75 Q155,75 155,80 L155,145 Q155,150 150,150 L50,150 Q45,150 45,145 L45,80 Q45,75 50,75 Z" />
+    
+    <!-- Toolbox handle -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#FFFFFF"
+        android:strokeWidth="8"
+        android:pathData="M75,75 L75,60 Q75,45 90,45 L110,45 Q125,45 125,60 L125,75" />
+    
+    <!-- AI Brain main circle -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M100,105 m-25,0 a25,25 0,1 1,50 0 a25,25 0,1 1,-50 0" />
+    
+    <!-- Brain center core -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M100,105 m-10,0 a10,10 0,1 1,20 0 a10,10 0,1 1,-20 0" />
+    
+    <!-- Neural node left -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M65,95 m-6,0 a6,6 0,1 1,12 0 a6,6 0,1 1,-12 0" />
+    
+    <!-- Neural node right -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M135,95 m-6,0 a6,6 0,1 1,12 0 a6,6 0,1 1,-12 0" />
+    
+    <!-- Neural node top -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M100,60 m-6,0 a6,6 0,1 1,12 0 a6,6 0,1 1,-12 0" />
+    
+    <!-- Neural node bottom -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M100,150 m-6,0 a6,6 0,1 1,12 0 a6,6 0,1 1,-12 0" />
+    
+    <!-- Connection lines -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="4"
+        android:pathData="M71,95 L87,100" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="4"
+        android:pathData="M113,100 L129,95" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="4"
+        android:pathData="M100,66 L100,87" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="4"
+        android:pathData="M100,118 L100,144" />
+    
+    <!-- Diagonal connections -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="3"
+        android:pathData="M73,98 L88,100" />
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#03DAC5"
+        android:strokeWidth="3"
+        android:pathData="M112,100 L127,98" />
+    
+    <!-- Toolbox divider line -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#E0E0E0"
+        android:strokeWidth="3"
+        android:pathData="M55,120 L145,120" />
+    
+    <!-- Toolbox latch -->
+    <path
+        android:fillColor="#03DAC5"
+        android:pathData="M88,145 L112,145 Q115,145 115,148 L115,155 Q115,158 112,158 L88,158 Q85,158 85,155 L85,148 Q85,145 88,145 Z" />
+    
+    <!-- Small decorative dots -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,85 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M145,85 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M55,140 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M145,140 m-3,0 a3,3 0,1 1,6 0 a3,3 0,1 1,-6 0" />
+</vector>
