@@ -2,6 +2,13 @@
 
 一款**隐私优先、离线可用**的 Android 多功能工具箱应用，整合 AI 能力与本地工具，无需账号、无广告、即装即用。
 
+## 界面展示
+<img width="1156" height="2510" alt="cc5a52b63dc88ee4c1f7d82fc1b576dc" src="https://github.com/user-attachments/assets/c04e858f-36b9-4c1e-807a-bcc76df0df6c" />
+<img width="1156" height="2510" alt="ec759e465c761bf82137268cdef151d1" src="https://github.com/user-attachments/assets/90e9fd63-7d3d-493f-86f5-9eb90e295b0b" />
+<img width="1156" height="2510" alt="0d053aa8e0810ec1d7a3577569976a1b" src="https://github.com/user-attachments/assets/2f8ba031-b746-4856-b603-bd52476aa1f5" />
+<img width="1156" height="2510" alt="d285d0145f11e8cec205ff532c96d056" src="https://github.com/user-attachments/assets/e0b9dfa5-6180-4f83-85e2-a8d16ac0f3a9" />
+
+
 ## ✨ 特性
 
 - 🔒 **隐私安全** - 所有数据本地存储，AI 调用不留存
