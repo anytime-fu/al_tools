@@ -1,0 +1,386 @@
+-- Get last inserted row ID
+lastInsertRowId:
+SELECT last_insert_rowid();
+
+-- Notes table
+CREATE TABLE IF NOT EXISTS notes (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    content TEXT NOT NULL DEFAULT '',
+    folder_id INTEGER,
+    is_pinned INTEGER NOT NULL DEFAULT 0,
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL,
+    FOREIGN KEY (folder_id) REFERENCES folders(id) ON DELETE SET NULL
+);
+
+getAllNotes:
+SELECT * FROM notes ORDER BY is_pinned DESC, updated_at DESC;
+
+getNoteById:
+SELECT * FROM notes WHERE id = ?;
+
+searchNotes:
+SELECT * FROM notes WHERE title LIKE '%' || ? || '%' OR content LIKE '%' || ? || '%' ORDER BY updated_at DESC;
+
+getNotesByFolder:
+SELECT * FROM notes WHERE folder_id = ? ORDER BY is_pinned DESC, updated_at DESC;
+
+insertNote:
+INSERT INTO notes (title, content, folder_id, is_pinned, created_at, updated_at)
+VALUES (?, ?, ?, ?, ?, ?);
+
+updateNote:
+UPDATE notes SET title = ?, content = ?, folder_id = ?, is_pinned = ?, updated_at = ? WHERE id = ?;
+
+deleteNote:
+DELETE FROM notes WHERE id = ?;
+
+deleteNoteById:
+DELETE FROM notes WHERE id = ?;
+
+-- Folders table
+CREATE TABLE IF NOT EXISTS folders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    parent_id INTEGER,
+    created_at INTEGER NOT NULL,
+    FOREIGN KEY (parent_id) REFERENCES folders(id) ON DELETE SET NULL
+);
+
+getAllFolders:
+SELECT * FROM folders ORDER BY name ASC;
+
+getFolderById:
+SELECT * FROM folders WHERE id = ?;
+
+insertFolder:
+INSERT INTO folders (name, parent_id, created_at) VALUES (?, ?, ?);
+
+updateFolder:
+UPDATE folders SET name = ?, parent_id = ? WHERE id = ?;
+
+deleteFolder:
+DELETE FROM folders WHERE id = ?;
+
+-- Tags table
+CREATE TABLE IF NOT EXISTS tags (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL UNIQUE,
+    color INTEGER NOT NULL DEFAULT 4283215696
+);
+
+getAllTags:
+SELECT * FROM tags ORDER BY name ASC;
+
+getTagById:
+SELECT * FROM tags WHERE id = ?;
+
+insertTag:
+INSERT INTO tags (name, color) VALUES (?, ?);
+
+updateTag:
+UPDATE tags SET name = ?, color = ? WHERE id = ?;
+
+deleteTag:
+DELETE FROM tags WHERE id = ?;
+
+-- Note-Tag cross reference table
+CREATE TABLE IF NOT EXISTS note_tag_cross_ref (
+    note_id INTEGER NOT NULL,
+    tag_id INTEGER NOT NULL,
+    PRIMARY KEY (note_id, tag_id),
+    FOREIGN KEY (note_id) REFERENCES notes(id) ON DELETE CASCADE,
+    FOREIGN KEY (tag_id) REFERENCES tags(id) ON DELETE CASCADE
+);
+
+getNoteTagIds:
+SELECT tag_id FROM note_tag_cross_ref WHERE note_id = ?;
+
+getNotesByTagId:
+SELECT n.* FROM notes n
+INNER JOIN note_tag_cross_ref nt ON n.id = nt.note_id
+WHERE nt.tag_id = ?
+ORDER BY n.is_pinned DESC, n.updated_at DESC;
+
+insertNoteTag:
+INSERT OR IGNORE INTO note_tag_cross_ref (note_id, tag_id) VALUES (?, ?);
+
+deleteNoteTags:
+DELETE FROM note_tag_cross_ref WHERE note_id = ?;
+
+-- Habits table
+CREATE TABLE IF NOT EXISTS habits (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    icon TEXT NOT NULL DEFAULT '⭐',
+    color INTEGER NOT NULL DEFAULT 4282682960,
+    frequency TEXT NOT NULL DEFAULT 'daily',
+    created_at INTEGER NOT NULL
+);
+
+getAllHabits:
+SELECT * FROM habits ORDER BY created_at DESC;
+
+getHabitById:
+SELECT * FROM habits WHERE id = ?;
+
+insertHabit:
+INSERT INTO habits (name, icon, color, frequency, created_at) VALUES (?, ?, ?, ?, ?);
+
+updateHabit:
+UPDATE habits SET name = ?, icon = ?, color = ?, frequency = ? WHERE id = ?;
+
+deleteHabit:
+DELETE FROM habits WHERE id = ?;
+
+-- Habit Records table
+CREATE TABLE IF NOT EXISTS habit_records (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    habit_id INTEGER NOT NULL,
+    date INTEGER NOT NULL,
+    is_completed INTEGER NOT NULL DEFAULT 0,
+    FOREIGN KEY (habit_id) REFERENCES habits(id) ON DELETE CASCADE
+);
+
+getHabitRecords:
+SELECT * FROM habit_records WHERE habit_id = ? ORDER BY date DESC;
+
+getHabitRecordByDate:
+SELECT * FROM habit_records WHERE habit_id = ? AND date = ?;
+
+insertHabitRecord:
+INSERT INTO habit_records (habit_id, date, is_completed) VALUES (?, ?, ?);
+
+updateHabitRecord:
+UPDATE habit_records SET is_completed = ? WHERE id = ?;
+
+deleteHabitRecord:
+DELETE FROM habit_records WHERE id = ?;
+
+-- Categories table
+CREATE TABLE IF NOT EXISTS categories (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    type TEXT NOT NULL,
+    icon TEXT NOT NULL DEFAULT '💰',
+    color INTEGER NOT NULL DEFAULT 4282682960,
+    created_at INTEGER NOT NULL
+);
+
+getAllCategories:
+SELECT * FROM categories ORDER BY type, name ASC;
+
+getCategoryById:
+SELECT * FROM categories WHERE id = ?;
+
+getCategoriesByType:
+SELECT * FROM categories WHERE type = ? ORDER BY name ASC;
+
+insertCategory:
+INSERT INTO categories (name, type, icon, color, created_at) VALUES (?, ?, ?, ?, ?);
+
+updateCategory:
+UPDATE categories SET name = ?, type = ?, icon = ?, color = ? WHERE id = ?;
+
+deleteCategory:
+DELETE FROM categories WHERE id = ?;
+
+-- Transactions table
+CREATE TABLE IF NOT EXISTS transactions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    amount REAL NOT NULL,
+    type TEXT NOT NULL,
+    category_id INTEGER NOT NULL,
+    note TEXT NOT NULL DEFAULT '',
+    date INTEGER NOT NULL,
+    created_at INTEGER NOT NULL,
+    FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE CASCADE
+);
+
+getAllTransactions:
+SELECT * FROM transactions ORDER BY date DESC;
+
+getTransactionById:
+SELECT * FROM transactions WHERE id = ?;
+
+getTransactionsByDateRange:
+SELECT * FROM transactions WHERE date >= ? AND date <= ? ORDER BY date DESC;
+
+getTransactionsByType:
+SELECT * FROM transactions WHERE type = ? ORDER BY date DESC;
+
+insertTransaction:
+INSERT INTO transactions (amount, type, category_id, note, date, created_at) VALUES (?, ?, ?, ?, ?, ?);
+
+updateTransaction:
+UPDATE transactions SET amount = ?, type = ?, category_id = ?, note = ?, date = ? WHERE id = ?;
+
+deleteTransaction:
+DELETE FROM transactions WHERE id = ?;
+
+-- Chat Sessions table
+CREATE TABLE IF NOT EXISTS chat_sessions (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+getAllChatSessions:
+SELECT * FROM chat_sessions ORDER BY updated_at DESC;
+
+getChatSessionById:
+SELECT * FROM chat_sessions WHERE id = ?;
+
+insertChatSession:
+INSERT INTO chat_sessions (title, created_at, updated_at) VALUES (?, ?, ?);
+
+updateChatSession:
+UPDATE chat_sessions SET title = ?, updated_at = ? WHERE id = ?;
+
+deleteChatSession:
+DELETE FROM chat_sessions WHERE id = ?;
+
+-- Chat Messages table
+CREATE TABLE IF NOT EXISTS chat_messages (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    session_id INTEGER NOT NULL,
+    role TEXT NOT NULL,
+    content TEXT NOT NULL,
+    created_at INTEGER NOT NULL,
+    FOREIGN KEY (session_id) REFERENCES chat_sessions(id) ON DELETE CASCADE
+);
+
+getMessagesBySessionId:
+SELECT * FROM chat_messages WHERE session_id = ? ORDER BY created_at ASC;
+
+insertChatMessage:
+INSERT INTO chat_messages (session_id, role, content, created_at) VALUES (?, ?, ?, ?);
+
+deleteMessagesBySessionId:
+DELETE FROM chat_messages WHERE session_id = ?;
+
+-- Schedules table
+CREATE TABLE IF NOT EXISTS schedules (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    title TEXT NOT NULL,
+    description TEXT NOT NULL DEFAULT '',
+    date INTEGER NOT NULL,
+    time TEXT NOT NULL DEFAULT '',
+    is_completed INTEGER NOT NULL DEFAULT 0,
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+getAllSchedules:
+SELECT * FROM schedules ORDER BY date ASC, time ASC;
+
+getScheduleById:
+SELECT * FROM schedules WHERE id = ?;
+
+getSchedulesByDate:
+SELECT * FROM schedules WHERE date = ? ORDER BY time ASC;
+
+insertSchedule:
+INSERT INTO schedules (title, description, date, time, is_completed, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?, ?);
+
+updateSchedule:
+UPDATE schedules SET title = ?, description = ?, date = ?, time = ?, is_completed = ?, updated_at = ? WHERE id = ?;
+
+deleteSchedule:
+DELETE FROM schedules WHERE id = ?;
+
+-- Password Entries table
+CREATE TABLE IF NOT EXISTS password_entries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    app_name TEXT NOT NULL,
+    account TEXT NOT NULL,
+    password TEXT NOT NULL,
+    note TEXT NOT NULL DEFAULT '',
+    created_at INTEGER NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+getAllPasswordEntries:
+SELECT * FROM password_entries ORDER BY app_name ASC;
+
+getPasswordEntryById:
+SELECT * FROM password_entries WHERE id = ?;
+
+searchPasswordEntries:
+SELECT * FROM password_entries WHERE app_name LIKE '%' || ? || '%' OR account LIKE '%' || ? || '%' ORDER BY app_name ASC;
+
+insertPasswordEntry:
+INSERT INTO password_entries (app_name, account, password, note, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?);
+
+updatePasswordEntry:
+UPDATE password_entries SET app_name = ?, account = ?, password = ?, note = ?, updated_at = ? WHERE id = ?;
+
+deletePasswordEntry:
+DELETE FROM password_entries WHERE id = ?;
+
+-- OCR History table
+CREATE TABLE IF NOT EXISTS ocr_history (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    image_path TEXT,
+    recognized_text TEXT NOT NULL,
+    language TEXT NOT NULL DEFAULT 'zh',
+    created_at INTEGER NOT NULL
+);
+
+getAllOcrHistory:
+SELECT * FROM ocr_history ORDER BY created_at DESC;
+
+getOcrHistoryById:
+SELECT * FROM ocr_history WHERE id = ?;
+
+insertOcrHistory:
+INSERT INTO ocr_history (image_path, recognized_text, language, created_at) VALUES (?, ?, ?, ?);
+
+deleteOcrHistory:
+DELETE FROM ocr_history WHERE id = ?;
+
+-- Measurements table
+CREATE TABLE IF NOT EXISTS measurements (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    value REAL NOT NULL,
+    unit TEXT NOT NULL,
+    type TEXT NOT NULL,
+    created_at INTEGER NOT NULL
+);
+
+getAllMeasurements:
+SELECT * FROM measurements ORDER BY created_at DESC;
+
+getMeasurementById:
+SELECT * FROM measurements WHERE id = ?;
+
+getMeasurementsByType:
+SELECT * FROM measurements WHERE type = ? ORDER BY created_at DESC;
+
+insertMeasurement:
+INSERT INTO measurements (name, value, unit, type, created_at) VALUES (?, ?, ?, ?, ?);
+
+deleteMeasurement:
+DELETE FROM measurements WHERE id = ?;
+
+-- Settings table
+CREATE TABLE IF NOT EXISTS settings (
+    key TEXT PRIMARY KEY NOT NULL,
+    value TEXT NOT NULL,
+    updated_at INTEGER NOT NULL
+);
+
+getAllSettings:
+SELECT * FROM settings;
+
+getSettingByKey:
+SELECT * FROM settings WHERE key = ?;
+
+insertOrReplaceSetting:
+INSERT OR REPLACE INTO settings (key, value, updated_at) VALUES (?, ?, ?);
+
+deleteSetting:
+DELETE FROM settings WHERE key = ?;

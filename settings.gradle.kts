@@ -23,3 +23,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "AI-Toolbox"
 include(":app")
+include(":common")
+include(":desktop")
